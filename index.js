@@ -14,6 +14,7 @@ const specialCharacters = [
 const toggle = document.querySelectorAll(".toggle");
 const circle = document.querySelectorAll(".circle");
 const generateButton = document.getElementById("generate-btn");
+const passwordLengthEl = document.getElementById("password-length")
 
 let numbersAreAllowed = true;
 let specialCharactersAreAllowed = true;
@@ -26,8 +27,6 @@ toggle[0].addEventListener("click", event => {
     event.target.classList.replace("off", "on");
     numbersAreAllowed = true;
   }
-
-  console.log(numbersAreAllowed);
 });
 
 toggle[1].addEventListener("click", event => {
@@ -38,8 +37,6 @@ toggle[1].addEventListener("click", event => {
     event.target.classList.replace("off", "on");
     specialCharactersAreAllowed = true;
   }
-
-  console.log(specialCharactersAreAllowed);
 });
 
 circle[0].addEventListener("click", event => {
@@ -50,19 +47,47 @@ circle[0].addEventListener("click", event => {
     event.target.parentNode.classList.replace("off", "on");
     numbersAreAllowed = true;
   }
-
-  console.log(numbersAreAllowed);
 });
 
 circle[1].addEventListener("click", event => {
   if(event.target.parentNode.classList.contains("on")) {
     event.target.parentNode.classList.replace("on", "off");
-    numbersAreAllowed = false;
+    specialCharactersAreAllowed = false;
   } else {
     event.target.parentNode.classList.replace("off", "on");
-    numbersAreAllowed = true;
+    specialCharactersAreAllowed = true;
   }
-
-  console.log(specialCharactersAreAllowed);
 });
 
+let allowedChars = [];
+
+generateButton.addEventListener("click", () => {
+  if(passwordLengthEl.value === "") {
+    window.alert("Choose a length for your password");
+  } else {
+    
+    if(numbersAreAllowed && specialCharactersAreAllowed) {
+      allowedChars = letters.concat(numbers).concat(specialCharacters);
+    } else if(numbersAreAllowed && !specialCharactersAreAllowed) {
+      allowedChars = letters.concat(numbers);
+    } else if(!numbersAreAllowed && specialCharactersAreAllowed) {
+      allowedChars = letters.concat(specialCharacters);
+    } else {
+      allowedChars = letters;
+    }
+
+    let passwordLength = passwordLengthEl.value;
+    let password = "";
+
+    for(let i = 0; i < Number(passwordLength); i++) {
+
+      let randomIndex = Math.floor(Math.random() * allowedChars.length);
+
+      password += allowedChars[randomIndex];
+
+    }
+
+    console.log(password);
+
+  }
+})
