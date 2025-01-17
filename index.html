@@ -11,20 +11,20 @@
     <h2>Generate a secure password</h2>
 
     <div id="length">
-      <label for="password-length"></label>
+      <label for="password-length">Length of the password (characters)</label>
       <input type="number" id="password-length">
     </div>
 
     <div id="numbers">
       <label>Allow numbers: </label>
-      <div class="toggle">
+      <div class="toggle on">
         <div class="circle"></div>
       </div>
     </div>
 
     <div id="special-characters">
       <label>Allow special characters: </label>
-      <div class="toggle">
+      <div class="toggle on">
         <div class="circle"></div>
       </div>
     </div>
@@ -32,7 +32,7 @@
     <button id="generate-btn">Generate password</button>
   </div>
 
-  <input type="text" id="password" readonly>
+  <input type="text" id="password" value="test" readonly>
 
   <script src="index.js"></script>
 </body>

@@ -3,3 +3,119 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2em;
+  color: #383838;
+}
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 60px;
+  width: 600px;
+  gap: 40px;
+  border: solid 2px #dddddd;
+  margin: 50px auto 0 auto;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgb(161, 161, 161);
+}
+
+#length, #numbers, #special-characters {
+  display: flex;
+  justify-content: space-between;
+}
+
+#password-length {
+  width: 60px;
+  font-size: 0.9em;
+  padding: 2px;
+}
+
+.toggle {
+  display: flex;
+  width: 60px;
+  align-items: center;
+  border-radius: 50px;
+  border: #b1b1b1;
+  cursor: pointer;
+}
+
+.circle {
+  height: 19px;
+  width: 19px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.on {
+  background-color: blueviolet;
+  justify-content: end;
+  padding-right: 5px;
+  animation-name: turn-on;
+  animation-duration: 700ms;
+  animation-iteration-count: 1;
+}
+
+.off {
+  background-color: #b1b1b1;
+  justify-content: start;
+  padding-left: 5px;
+  animation-name: turn-off;
+  animation-duration: 700ms;
+  animation-iteration-count: 1;
+}
+
+button {
+  cursor: pointer;
+  height: 40px;
+  width: 300px;
+  background-color: blueviolet;
+  color: #ffffff;
+  border-radius: 20px;
+  border: none;
+  margin: 20px auto;
+  font-size: 1em;
+  transition: background-color 200ms;
+}
+
+button:hover {
+  background-color: #5a1c93;
+}
+
+button:active {
+  background-color: #2c0e48;
+}
+
+#password {
+  margin-top: 50px;
+  width: 200px;
+  border: 2px solid #b7b7b7;
+  border-radius: 5px;
+  background-color: #ededed;
+  padding: 10px 20px;
+  font-size: 1em;
+  text-align: center;
+}
+
+@keyframes turn-on {
+  0%    { background-color: #b1b1b1;
+          justify-content: start;
+          padding-left: 5px; }
+
+  100%  { background-color: blueviolet;
+          justify-content: end;
+          padding-right: 5px; }
+}
+
+@keyframes turn-off {
+  0%    { background-color: blueviolet;
+          justify-content: end;
+          padding-right: 5px; }
+
+  100%  { background-color: #b1b1b1;
+          justify-content: start;
+          padding-left: 5px; }
+}
