@@ -14,7 +14,8 @@ const specialCharacters = [
 const toggle = document.querySelectorAll(".toggle");
 const circle = document.querySelectorAll(".circle");
 const generateButton = document.getElementById("generate-btn");
-const passwordLengthEl = document.getElementById("password-length")
+const passwordLengthEl = document.getElementById("password-length");
+const passwordEl = document.getElementById("password");
 
 let numbersAreAllowed = true;
 let specialCharactersAreAllowed = true;
@@ -87,7 +88,13 @@ generateButton.addEventListener("click", () => {
 
     }
 
-    console.log(password);
+    passwordEl.textContent = password;
 
   }
+})
+
+passwordEl.addEventListener("click", () => {
+
+  navigator.clipboard.writeText(passwordEl.textContent);
+  window.alert(`Copied ${passwordEl.textContent} to clipboard`);
 })

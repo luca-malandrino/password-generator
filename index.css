@@ -91,14 +91,25 @@ button:active {
 }
 
 #password {
-  margin-top: 50px;
-  width: 200px;
+  width: 300px;
+  margin: 50px auto 0 auto;
+  height: 2em;
+  padding: 5px 10px;
   border: 2px solid #b7b7b7;
   border-radius: 5px;
   background-color: #ededed;
-  padding: 10px 20px;
   font-size: 1em;
   text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#password:hover {
+  background-color: #d6d6d6;
+}
+
+#password:active  {
+  background-color: #bfbfbf;
 }
 
 @keyframes turn-on {
