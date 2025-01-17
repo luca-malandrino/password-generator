@@ -65,6 +65,7 @@ body {
   padding-left: 5px;
   animation-name: turn-off;
   animation-duration: 700ms;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
@@ -103,19 +104,23 @@ button:active {
 @keyframes turn-on {
   0%    { background-color: #b1b1b1;
           justify-content: start;
-          padding-left: 5px; }
+          padding-left: 5px;
+          padding-right: 5px; }
 
   100%  { background-color: blueviolet;
           justify-content: end;
+          padding-left: 5px;
           padding-right: 5px; }
 }
 
 @keyframes turn-off {
   0%    { background-color: blueviolet;
           justify-content: end;
+          padding-left: 5px;
           padding-right: 5px; }
 
   100%  { background-color: #b1b1b1;
           justify-content: start;
-          padding-left: 5px; }
+          padding-left: 5px;
+          padding-right: 5px; }
 }
